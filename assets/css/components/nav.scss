@@ -1,0 +1,18 @@
+.nav {
+    display: flex;
+    flex-direction: column;
+    &__title {
+        padding: $padding 0;
+    }
+    &__timer {
+        height: 5px;
+        background: white;
+        background: lighten($dark, 15);
+        &__counter {
+            transition: all 0.2s;
+            height: 100%;
+            width: 0;
+            background: linear-gradient(90deg, lighten($dark, 65) 0%, lighten($dark, 100) 100%);
+        }
+    }
+}

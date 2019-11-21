@@ -1,0 +1,98 @@
+@import 'variables';
+
+html {
+    scroll-behavior: smooth;
+}
+
+input {
+    -webkit-appearance: none !important;
+}
+
+.v-align {
+    display: flex;
+    align-items: center;
+    &--right {
+        @extend .v-align;
+        justify-content: flex-end;
+    }
+}
+
+.no-focus-outline {
+    a:focus {
+        outline: none;
+    }
+    button:focus {
+        outline: none;
+    }
+    input:focus {
+        outline: none;
+    }
+    select:focus {
+        outline: none;
+    }
+}
+
+@mixin keyframes($animation-name) {
+    @-webkit-keyframes #{$animation-name} {
+        @content;
+    }
+    @-moz-keyframes #{$animation-name} {
+        @content;
+    }
+    @-ms-keyframes #{$animation-name} {
+        @content;
+    }
+    @-o-keyframes #{$animation-name} {
+        @content;
+    }
+    @keyframes #{$animation-name} {
+        @content;
+    }
+}
+
+@mixin animation($str) {
+    -webkit-animation: #{$str};
+    -moz-animation: #{$str};
+    -ms-animation: #{$str};
+    -o-animation: #{$str};
+    animation: #{$str};
+}
+
+@mixin flex-row {
+    display: flex;
+    flex-direction: row;
+}
+
+@mixin flex-column {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin flex-center-center {
+    justify-content: center;
+    align-items: center;
+}
+
+@mixin unstyled-list {
+    padding-inline-start: 40px;
+    margin-block-start: 0;
+    margin-block-end: 0;
+    list-style: none;
+}
+
+@mixin unstyled-anchor {
+    color: $dark;
+    text-decoration: none;
+    &:hover {
+        color: $dark;
+        text-decoration: none;
+    }
+} 
+
+@media (max-width: $breakpoint-sm) {
+    #overflow-avoider {
+        overflow-y: auto;
+        
+        -webkit-overflow-scrolling: touch;
+    }
+}
